@@ -1,7 +1,8 @@
-
 from __future__ import division
+import numpy as np
+from numpy import *
 from pylab import *
-from scipy.misc import imresize
+from scipy.misc import imread, imresize
 from drawnow import drawnow
 from time import sleep
 
