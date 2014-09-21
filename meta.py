@@ -7,7 +7,7 @@ from pylab import axis, figure, imshow, ion, set_cmap, title
 from scipy.misc import imread, imresize
 from time import sleep
 
-def sector_mask(shape=None, centre=(200, 300), percentage=0.25, radius=100):
+def sector_mask(shape=None, center=(200, 300), percentage=0.25, radius=100):
     """
     Return a boolean mask for a circular sector. The start/stop angles in  
     `angle_range` should be given in clockwise order.
@@ -16,7 +16,7 @@ def sector_mask(shape=None, centre=(200, 300), percentage=0.25, radius=100):
     angle_range = (dc, dc + percentage * 360)
 
     x,y = np.ogrid[:shape[0],:shape[1]]
-    cx,cy = centre
+    cx,cy = center
     tmin,tmax = np.deg2rad(angle_range)
 
     # ensure stop angle > start angle
@@ -38,7 +38,7 @@ def sector_mask(shape=None, centre=(200, 300), percentage=0.25, radius=100):
 
     return circmask * anglemask
 def draw_circle(percentage, image, r=70, center=(90, 148)):
-    mask = sector_mask(shape=image.shape, percentage=percentage, radius=r, centre=center)
+    mask = sector_mask(shape=image.shape, percentage=percentage, radius=r, center=center)
     image[mask] = 1
     return image
 def draw_bars(panel_black, comic, height=400):
