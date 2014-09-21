@@ -43,7 +43,7 @@ def sector_mask(shape=None, center=(200, 300), percentage=0.25, radius=100):
 def draw_circle(percentage, image, r=70, center=(90, 148)):
     mask = sector_mask(shape=image.shape, percentage=percentage, radius=r,
                        center=center)
-    image[mask] = 1
+    image[mask] = 255
     return image
 
 
@@ -51,7 +51,7 @@ def draw_bars(panel_black, comic, height=400):
     base = 154
     for i in arange(3):
         bar_height = round(height * panel_black[i])
-        comic[base - bar_height:base, 300 + 60 * i:300 + 60 * i + 30] = 1
+        comic[base - bar_height:base, 300 + 60 * i:300 + 60 * i + 30] = 255
 
 
 def draw_figure():
@@ -80,7 +80,7 @@ def draw_figure():
 if __name__ == "__main__":
     panels = 3
     WIDTH = 246
-    BLACK = 0.2
+    BLACK = 127
 
     comic = imread('base.png')
     #comic = 1 - np.round(comic)
