@@ -72,7 +72,6 @@ def draw_figure():
     #draw_locations(comic)
     resized = imresize(comic, 0.25)
     resized /= resized.max()
-    resized[:, -1] = 1
     rn, rm = resized.shape
     base_x, base_y = (80, 530)
     comic[base_x:base_x + rn, base_y:base_y + rm] = resized
