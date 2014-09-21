@@ -1,9 +1,10 @@
 from __future__ import division
-import numpy as np
-from numpy import *
-from pylab import *
-from scipy.misc import imread, imresize
+
 from drawnow import drawnow
+import numpy as np
+from numpy import arange, argwhere, zeros
+from pylab import axis, figure, imshow, ion, set_cmap, title
+from scipy.misc import imread, imresize
 from time import sleep
 
 def sector_mask(shape=None, centre=(200, 300), percentage=0.25, radius=100):
